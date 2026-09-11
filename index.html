@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🥣 Papinhas Mágicas — 25 Receitas para Bebês de 6 a 12+ Meses</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
+  body { background: #fff9f0; color: #2e241f; line-height: 1.6; }
+  .container { max-width: 800px; margin: 0 auto; padding: 0 1.2rem; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, #ffe6f0 0%, #fff9e6 50%, #e6f7ff 100%);
+    padding: 3rem 1.2rem 2.5rem;
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: clamp(1.6rem, 5vw, 2.4rem);
+    color: #ff6b9d;
+    text-shadow: 2px 2px 0 #fff;
+    margin-bottom: 0.8rem;
+  }
+  .hero p {
+    font-size: 1.1rem;
+    color: #6b4f3c;
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+  }
+  .mockup {
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto 1.5rem;
+    display: block;
+  }
+  .cta {
+    display: inline-block;
+    background: #ff6b9d;
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 60px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 6px 0 #d63d6e;
+    transition: transform 0.2s;
+    border: none;
+    cursor: pointer;
+  }
+  .cta:hover { transform: translateY(-3px); }
+  .cta:active { transform: translateY(3px); box-shadow: 0 2px 0 #d63d6e; }
+
+  /* SEÇÕES */
+  section { padding: 2.5rem 1.2rem; }
+  section h2 {
+    text-align: center;
+    font-size: 1.6rem;
+    color: #5c4a7a;
+    margin-bottom: 1.5rem;
+  }
+
+  /* DOR */
+  .dor { background: #fff5f8; }
+  .dor ul { list-style: none; max-width: 600px; margin: 0 auto; }
+  .dor li {
+    padding: 0.7rem 1rem;
+    margin-bottom: 0.6rem;
+    background: white;
+    border-radius: 14px;
+    border-left: 5px solid #ff6b9d;
+    font-size: 1rem;
+  }
+
+  /* BENEFÍCIOS */
+  .beneficios { background: white; }
+  .beneficios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; max-width: 700px; margin: 0 auto; }
+  .beneficio-card {
+    background: #fffbf5;
+    border: 2px dashed #ffd6a8;
+    border-radius: 18px;
+    padding: 1.2rem;
+    text-align: center;
+  }
+  .beneficio-card .icone { font-size: 2rem; margin-bottom: 0.5rem; }
+  .beneficio-card h3 { font-size: 1rem; color: #5c4a7a; margin-bottom: 0.4rem; }
+  .beneficio-card p { font-size: 0.85rem; color: #7a5c8e; }
+
+  /* PROVA SOCIAL */
+  .depoimentos { background: #f0f9ff; }
+  .depoimento {
+    background: white;
+    border-radius: 18px;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    border-left: 5px solid #6fb1e0;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .depoimento p { font-size: 0.95rem; color: #4a5b6b; font-style: italic; }
+  .depoimento span { display: block; margin-top: 0.5rem; font-weight: 700; color: #6fb1e0; font-size: 0.85rem; }
+
+  /* OFERTA */
+  .oferta { background: linear-gradient(135deg, #ffe6f0, #fff9e6); text-align: center; }
+  .preco-box {
+    background: white;
+    border-radius: 24px;
+    padding: 2rem 1.5rem;
+    max-width: 420px;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 10px 30px rgba(255, 107, 157, 0.15);
+    border: 3px solid #ffd6e7;
+  }
+  .preco-antigo { color: #999; text-decoration: line-through; font-size: 1rem; }
+  .preco-atual { font-size: 3rem; color: #ff6b9d; font-weight: 800; line-height: 1; }
+  .preco-atual small { font-size: 1rem; color: #7a5c8e; font-weight: 400; }
+  .parcela { color: #6b4f3c; font-size: 0.95rem; margin-bottom: 1.2rem; }
+  .bonus-lista { list-style: none; text-align: left; max-width: 320px; margin: 0 auto 1.5rem; }
+  .bonus-lista li { padding: 0.4rem 0; font-size: 0.9rem; color: #5c4a7a; }
+  .bonus-lista li::before { content: "🎁 "; }
+
+  /* GARANTIA */
+  .garantia { text-align: center; background: white; }
+  .garantia .selo {
+    display: inline-block;
+    background: #e8f5e9;
+    border: 3px dashed #7bc96f;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    line-height: 1.2;
+    padding: 25px 10px;
+    color: #2e7d32;
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  /* FAQ */
+  .faq { background: #f8f5ff; }
+  .faq-item {
+    background: white;
+    border-radius: 14px;
+    margin-bottom: 0.8rem;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    border: 1px solid #e2d9f0;
+  }
+  .faq-item summary {
+    padding: 1rem 1.2rem;
+    cursor: pointer;
+    font-weight: 700;
+    color: #5c4a7a;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .faq-item summary::after { content: "➕"; color: #b57de0; }
+  .faq-item[open] summary::after { content: "➖"; }
+  .faq-item p { padding: 0 1.2rem 1rem; font-size: 0.9rem; color: #6b5b7a; }
+
+  /* RODAPÉ */
+  footer {
+    text-align: center;
+    padding: 2rem 1.2rem;
+    font-size: 0.8rem;
+    color: #999;
+    background: #2e241f;
+  }
+  footer a { color: #ffb6c1; text-decoration: none; }
+
+  /* CTA FINAL FIXO */
+  .cta-final { text-align: center; padding: 2rem 1.2rem; background: white; }
+
+  @media (max-width: 500px) {
+    .cta { font-size: 1rem; padding: 0.9rem 1.8rem; }
+    .preco-atual { font-size: 2.4rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<div class="hero">
+  <h1>🥣 Papinhas Mágicas</h1>
+  <p><strong>25 receitas</strong> nutritivas, saborosas e aprovadas por bebês de <strong>6 a 12+ meses</strong> — prontas em até 15 minutos por dia.</p>
+
+  <!-- MOCKUP: desenho SVG da capa do produto -->
+  <svg class="mockup" viewBox="0 0 380 240" xmlns="http://www.w3.org/2000/svg">
+    <rect x="10" y="10" width="360" height="220" rx="20" fill="#fff" stroke="#ffd6e7" stroke-width="4"/>
+    <rect x="30" y="30" width="320" height="180" rx="14" fill="#fff9f0"/>
+    <!-- tigela -->
+    <ellipse cx="190" cy="140" rx="90" ry="30" fill="#ffb347"/>
+    <ellipse cx="190" cy="130" rx="90" ry="30" fill="#ffd6a8"/>
+    <ellipse cx="190" cy="128" rx="75" ry="22" fill="#ff9e5e"/>
+    <!-- colher -->
+    <ellipse cx="260" cy="115" rx="14" ry="9" fill="#e0e0e0"/>
+    <rect x="268" y="113" width="50" height="5" rx="2" fill="#c0c0c0"/>
+    <!-- vapor -->
+    <path d="M170 95 Q175 80 170 70" stroke="#ddd" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M190 90 Q195 75 190 65" stroke="#ddd" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M210 95 Q215 80 210 70" stroke="#ddd" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <!-- título no mockup -->
+    <text x="190" y="55" text-anchor="middle" font-family="Comic Sans MS, cursive" font-size="20" font-weight="bold" fill="#ff6b9d">Papinhas Mágicas</text>
+    <text x="190" y="75" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#7a5c8e">25 receitas para bebês</text>
+    <!-- estrelas -->
+    <text x="60" y="200" font-size="18">⭐</text>
+    <text x="180" y="205" font-size="18">⭐</text>
+    <text x="300" y="200" font-size="18">⭐</text>
+  </svg>
+
+  <a href="#oferta" class="cta">🥄 Quero minhas 25 receitas agora</a>
+</div>
+
+<!-- ============ DOR ============ -->
+<section class="dor">
+  <div class="container">
+    <h2>😢 Você já passou por isso?</h2>
+    <ul>
+      <li>😩 Bebê recusando a comida e você sem saber o que fazer</li>
+      <li>⏰ Sem tempo para pesquisar receitas confiáveis todos os dias</li>
+      <li>🤷 Insegurança sobre o que pode ou não pode dar em cada idade</li>
+      <li>🍽️ Desperdício de comida porque o bebê não come o que você preparou</li>
+      <li>😰 Medo de errar na introdução alimentar e prejudicar o bebê</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ BENEFÍCIOS ============ -->
+<section class="beneficios">
+  <div class="container">
+    <h2>✨ O que você recebe</h2>
+    <div class="beneficios-grid">
+      <div class="beneficio-card">
+        <div class="icone">🥣</div>
+        <h3>25 Receitas Completas</h3>
+        <p>Salgadas e doces, testadas e aprovadas por bebês reais.</p>
+      </div>
+      <div class="beneficio-card">
+        <div class="icone">⏱️</div>
+        <h3>Prontas em 15 min</h3>
+        <p>Sem complicação, com ingredientes que você já tem em casa.</p>
+      </div>
+      <div class="beneficio-card">
+        <div class="icone">📋</div>
+        <h3>Passo a Passo Ilustrado</h3>
+        <p>Do purê ao prato do dia a dia, com modo de preparo fácil.</p>
+      </div>
+      <div class="beneficio-card">
+        <div class="icone">🎁</div>
+        <h3>Bônus Exclusivos</h3>
+        <p>Lista de compras + planner de introdução alimentar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROVA SOCIAL ============ -->
+<section class="depoimentos">
+  <div class="container">
+    <h2>💬 O que as mamães estão dizendo</h2>
+    <div class="depoimento">
+      <p>"Meu filho de 8 meses finalmente começou a comer tudo! As receitas são simples e ele ama. Mudou nossa rotina."</p>
+      <span>— Camila S., mãe do Theo</span>
+    </div>
+    <div class="depoimento">
+      <p>"Eu não sabia por onde começar na introdução alimentar. As Papinhas Mágicas me deram segurança e meu bebê adora."</p>
+      <span>— Juliana M., mãe da Alice</span>
+    </div>
+    <div class="depoimento">
+      <p>"Rápido, fácil e barato. Faço em 15 minutos antes do trabalho e meu bebê come super bem. Recomendo demais!"</p>
+      <span>— Patrícia R., mãe do Davi</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OFERTA ============ -->
+<section class="oferta" id="oferta">
+  <div class="container">
+    <h2>🎁 Oferta Especial de Lançamento</h2>
+    <div class="preco-box">
+      <p class="preco-antigo">De R$ 97,00</p>
+      <p class="preco-atual">R$ 27<small>,00</small></p>
+      <p class="parcela">ou 3x de R$ 9,45 no cartão</p>
+      <ul class="bonus-lista">
+        <li>25 receitas completas (PDF + versão online)</li>
+        <li>Bônus: Lista de compras semanal</li>
+        <li>Bônus: Planner de introdução alimentar (30 dias)</li>
+        <li>Acesso imediato após a compra</li>
+      </ul>
+      <!-- SUBSTITUA O LINK ABAIXO PELO LINK DE CHECKOUT DA KIWIFY -->
+      <a href="https://pay.kiwify.com.br/SEU-LINK-AQUI" class="cta">🥄 Quero acesso imediato</a>
+      <p style="font-size:0.8rem;color:#999;margin-top:1rem;">🔒 Pagamento seguro • Acesso imediato</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GARANTIA ============ -->
+<section class="garantia">
+  <div class="container">
+    <div class="selo">7 DIAS DE GARANTIA</div>
+    <h2>Risco Zero para Você</h2>
+    <p style="max-width:500px;margin:0 auto;color:#5c4a7a;">Se por qualquer motivo você não gostar, basta enviar um e-mail dentro de 7 dias e devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia.</p>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq">
+  <div class="container">
+    <h2>❓ Perguntas Frequentes</h2>
+    <details class="faq-item">
+      <summary>Para qual idade as receitas servem?</summary>
+      <p>As 25 receitas foram desenvolvidas para bebês de 6 a 12+ meses, com indicação de idade em cada uma delas.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Preciso saber cozinhar?</summary>
+      <p>Não! O passo a passo é simples, ilustrado e pensado para quem tem pouco tempo e pouca experiência na cozinha.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Os ingredientes são caros?</summary>
+      <p>Não. Usamos ingredientes acessíveis, encontrados em qualquer feira ou supermercado, e muitos você já tem em casa.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Como recebo o produto?</summary>
+      <p>Após a confirmação do pagamento, você recebe o acesso imediato por e-mail e também pela área de membros da Kiwify.</p>
+    </details>
+    <details class="faq-item">
+      <summary>E se eu não gostar?</summary>
+      <p>Você tem 7 dias de garantia total. Basta pedir o reembolso e devolvemos todo o valor pago.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section class="cta-final">
+  <div class="container">
+    <h2>🥄 Pronta para transformar a refeição do seu bebê?</h2>
+    <p style="margin-bottom:1.5rem;color:#6b4f3c;">Comece hoje e veja a diferença em poucos dias.</p>
+    <a href="https://pay.kiwify.com.br/SEU-LINK-AQUI" class="cta">🥣 Quero minhas Papinhas Mágicas</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Papinhas Mágicas. Todos os direitos reservados.</p>
+  <p style="margin-top:0.5rem;">Este material não substitui a orientação de pediatras ou nutricionistas.</p>
+</footer>
+
+</body>
+</html>
